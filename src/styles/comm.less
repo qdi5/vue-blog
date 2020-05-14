@@ -1,0 +1,325 @@
+body {
+  background: #fff;
+  font: 12px/1.5 "Microsoft YaHei", Arial, Helvetica, sans-serif, 'Simsun';
+  word-break: break-all;
+  color: #666666;
+}
+input,
+button {
+  outline: 0;
+  /*解决ios上按钮的圆角问题*/
+  -webkit-appearance : none ;
+  /*解决ios上input的圆角问题*/
+  border-radius: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin-top: 0;
+}
+figure {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+.hide,
+.navbar-mene-level {
+  display: none;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.no-more-data {
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  background: #f77825;
+  box-sizing: border-box;
+  margin-top: 15px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+// a:link {
+//   color: #666;
+// }
+// a:visited {
+//   color: #666;
+// }
+// a:hover {
+//   color: #000
+// }
+// a:active {
+//   color: #000;
+// }
+// 固定宽度(需要使用媒体查询动态改变该值)
+.container {
+  //width: 1200px;
+  margin: 0 auto;
+}
+
+.aside {
+  position: relative;
+}
+
+// flex横向布局(默认换行)
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// flex横向布局(不换行)
+.flex-horizontal-nowrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+// flex纵向布局
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+// 平分间距(可以用于两端对齐)
+.flex-horizontal-justify {
+  justify-content: space-between;
+}
+.flex-horizontal-start {
+  justify-content: flex-start;
+}
+
+// 项目左右两侧的边距一样
+.flex-horizontal-around {
+  justify-content: space-around;
+}
+
+
+// 水平居中
+.flex-horizontal-center {
+  justify-content: center;
+}
+
+// 垂直居中
+.flex-vertical-center {
+  align-items: center
+}
+.text-align-right {
+  text-align: right
+}
+// 最外层容器
+.wrapper {
+  width: 100%;
+}
+
+
+
+.responsive-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+// 单行文本显示省略号
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+// 多行文本显示省略号
+.multi-ellipsis {
+  position:relative;
+  line-height: 22px;
+   /*设置容器高度为3倍行高就是显示3行*/
+  height: 88px;
+  overflow:hidden;
+  &:after{
+    content:'......';
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 2px;
+    background:#fff;
+  }
+}
+
+.counter {
+  position: relative;
+  width: 20px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin-top: -3px;
+  &:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    left: 0;
+    border-radius: 4px;
+    font-style: normal;
+  }
+  &.number-1:before {
+    content: '1';
+    background-color: rgb(255, 51, 0);
+  }
+  &.number-2:before {
+    content: '2';
+    background-color: rgb(255, 102, 0);
+  }
+  &.number-3:before {
+    content: '3';
+    background-color: rgb(255, 153, 0);
+  }
+  &.number-4:before {
+    content: '4';
+    background-color: rgb(102, 102, 102);
+  }
+  &.number-5:before {
+    content: '5';
+    background-color: rgb(102, 102, 102);
+  }
+  &.number-6:before {
+    content: '6';
+    background-color: rgb(102, 102, 102);
+  }
+}
+.back-to-top {
+  position: fixed;
+  right: 12px;
+  bottom: 15px;
+  font-size: 55px;
+  color: #111;
+  cursor: pointer;
+  display: none;
+}
+
+/*=== 文章列表 begin===*/
+.recommend {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 4px #db6d4c solid
+}
+.article-wrap {
+  height: 250px;
+  box-sizing: border-box;
+  padding: 30px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+
+  .article-img {
+    flex: 0 0 25%;
+    margin-right: 20px;
+    overflow: hidden;
+    figure {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .post {
+    position: relative;
+    flex: 1;
+    .article-footer {
+      width: 100%;
+    }
+  }
+  .article-summary {
+    flex: 1;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  .article-title {
+    font-size: 28px;
+    color: #474645;
+    margin-bottom: 10px;
+    & > a {
+      color: #666;
+      &:hover {
+        color: #066;
+        text-decoration: underline;
+      }
+    }
+  }
+  .article-info-left,
+  .article-info-right {
+    span:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  .article-info-left {
+    .type {
+      i {
+        color: rgb(248, 168, 169);
+        &+a {
+          color: #666
+        }
+      }
+    }
+    .time {
+      i {
+        color: rgb(97, 197, 232);
+      }
+    }
+  }
+  .article-info-right {
+    color: #838383;
+    a {
+      color: #838383;
+    }
+  }
+}
+/*=== 文章列表 end===*/
+/*过度动画*/
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.fade-enter-active {
+  transition: all .3s ease;
+}
+.fade-leave-active {
+  transition: all .8s;
+}
+.fade-enter, .fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .article-wrap {
+    height: auto;
+    .article-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .article-summary {
+      font-size: 14px;
+    }
+    .article-img {
+      flex: 0 0 34%;
+      margin-right: 10px;
+    }
+    .post .article-footer {
+      display: block;
+    }
+    .article-info-left {
+      display: none;
+      text-align: right;
+      flex-basis: 100%;
+    }
+    .article-info-right {
+      flex-basis: 100%;
+      text-align: right;
+    }
+  }
+}
