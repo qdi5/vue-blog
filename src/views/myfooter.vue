@@ -1,11 +1,19 @@
 <template>
 <footer>
   <div class="container footer">
-    Copyright ©2018  前端爱我 鄂ICP备16019423号-3
+    Copyright ©2018-{{ now }}  前端爱我 鄂ICP备16019423号-2
   </div>
 </footer>
 </template>
 <script>
+import dayjs from 'dayjs'
+export default {
+  data () {
+    return {
+      now: dayjs().year()
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
   footer {
